@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CrossFit Gym | Unleash Your Strength</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#e63946",
+                    "background-light": "#f8f6f6",
+                    "background-dark": "#1a1a1a",
+                    "neutral-dark": "#261c1d",
+                    "border-dark": "#38292a",
+                },
+                fontFamily: {
+                    "display": ["Lexend", "sans-serif"],
+                    "sans": ["Lexend", "sans-serif"]
+                },
+                borderRadius: {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+                },
+            },
+        },
+    }
+</script>
+<style>
+    body {
+        font-family: 'Lexend', sans-serif;
+    }
+
+    .hero-gradient {
+        background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.6)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hover-lift {
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .hover-lift:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Classes Page Styles */
+    .class-card:hover {
+        transform: translateY(-8px);
+        transition: all 0.3s ease;
+    }
+
+    .btn-hover:hover {
+        transform: scale(1.05);
+        transition: transform 0.2s ease;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 0.6s ease forwards;
+    }
+
+    /* FAQ Page Styles */
+    details>summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .fade-in-section {
+        opacity: 1;
+        /* Fallback for no JS */
+        animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    /* Schedule Page Styles */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: #2d1a1b;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #e63746;
+    }
+
+    /* Trainers Page Styles */
+    .trainer-card:hover .social-icons {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .form-input:focus {
+        border-color: #e63746 !important;
+        box-shadow: none !important;
+    }
+
+    /* Blog Details Styles */
+    .article-content h2 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .article-content p {
+        font-size: 1.125rem;
+        line-height: 1.75;
+        margin-bottom: 1.5rem;
+        color: #d1c1c2;
+    }
+
+    .article-content blockquote {
+        border-left: 4px solid #e63746;
+        padding-left: 1.5rem;
+        font-style: italic;
+        margin: 2rem 0;
+        color: white;
+        font-size: 1.25rem;
+    }
+</style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-white font-display">
+
+    <header
+    class="sticky top-0 z-50 w-full bg-background-dark border-b border-white/10 px-4 md:px-10 lg:px-20 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2">
+        <div class="text-primary size-8 flex items-center justify-center">
+            <span class="material-symbols-outlined text-4xl">fitness_center</span>
+        </div>
+        <h1 class="text-xl font-black tracking-tighter uppercase">CrossFit<span class="text-primary">Gym</span></h1>
+    </a>
+    <nav class="hidden xl:flex items-center gap-6">
+        <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors" href="about.html">About</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="classes.html">Classes</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="trainers.html">Trainers</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="schedule.html">Schedule</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="blog.html">Blog</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors" href="faq.html">FAQ</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="contact.html">Contact</a>
+    </nav>
+    <div class="flex items-center gap-4">
+        <a href="contact.html"
+            class="bg-primary hover:bg-primary/90 text-white px-6 py-2 text-sm font-bold uppercase transition-all rounded">
+            Join Now
+        </a>
+        <button class="xl:hidden text-white">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+    </div>
+</header>
+
+        <!-- Hero Section -->
+    <section class="relative w-full h-[500px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" data-alt="Intense athlete doing crossfit in gym"
+            style="background-image: linear-gradient(rgba(24, 17, 18, 0.7), rgba(24, 17, 18, 0.9)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuC8ZfuS2c5g3pw5-JdBzjKli-59BmLS0tqcwk2L4SbeMGrVSy5411e4D9DBekZJyeJ19rnNmvJNk9yKGemuQcOFVkrnZ0JmDT6yUJSPOo0Q5WRTh2F2t1JKTuB9GIvxLPjMEK5YJ_kCAXWYqzq3_GOq9jRmeBUckiV3VCK4ToJ95SFVlG5jvLDzco6Hxa7LfHRpO6mQ8O9skSETQ5O3lMYd2LEQHm9j2OgzteUMnHnmJk1El5LyMZu8ZRvUD2txreV0dOo3eId-JklI');">
+        </div>
+        <div class="relative z-10 text-center px-4 max-w-4xl">
+            <h1 class="text-white text-5xl md:text-7xl font-black leading-tight tracking-tight uppercase mb-4 italic">
+                About CrossFit Gym
+            </h1>
+            <p class="text-[#b89da0] text-lg md:text-xl font-normal max-w-2xl mx-auto">
+                Pushing Limits, Building Community. From humble beginnings to your premier fitness box. We aren't just a
+                gym; we're a movement.
+            </p>
+            <div class="mt-8">
+                <a href="contact.html"
+                    class="bg-primary px-8 py-4 rounded font-bold uppercase tracking-widest hover:bg-primary/90 transition-all hover:scale-105 active:scale-95 inline-block text-center">
+                    Join the Community
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Mission Section -->
+    <section class="py-20 px-4 md:px-20 lg:px-40 bg-background-dark">
+        <div class="max-w-[960px] mx-auto">
+            <div class="flex flex-col items-center mb-12">
+                <span class="text-primary font-bold tracking-widest uppercase text-sm mb-2">Our Foundation</span>
+                <h2 class="text-white text-3xl md:text-4xl font-black text-center">Our Mission</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div
+                    class="flex flex-col gap-4 rounded border border-border-dark bg-neutral-dark p-8 hover:border-primary/50 transition-colors group">
+                    <div class="text-primary group-hover:scale-110 transition-transform duration-300">
+                        <span class="material-symbols-outlined text-4xl">bolt</span>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-xl font-bold mb-2 uppercase tracking-wide">Functional Fitness</h3>
+                        <p class="text-[#b89da0] text-sm leading-relaxed">Real-world movements for real-world strength. We
+                            train for life, not just for aesthetics.</p>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-col gap-4 rounded border border-border-dark bg-neutral-dark p-8 hover:border-primary/50 transition-colors group">
+                    <div class="text-primary group-hover:scale-110 transition-transform duration-300">
+                        <span class="material-symbols-outlined text-4xl">monitoring</span>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-xl font-bold mb-2 uppercase tracking-wide">Measurable Results</h3>
+                        <p class="text-[#b89da0] text-sm leading-relaxed">Track your progress with data-driven training. If
+                            it's not measured, it's not managed.</p>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-col gap-4 rounded border border-border-dark bg-neutral-dark p-8 hover:border-primary/50 transition-colors group">
+                    <div class="text-primary group-hover:scale-110 transition-transform duration-300">
+                        <span class="material-symbols-outlined text-4xl">groups</span>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-xl font-bold mb-2 uppercase tracking-wide">Inclusivity</h3>
+                        <p class="text-[#b89da0] text-sm leading-relaxed">A welcoming environment for every fitness level.
+                            From beginners to elite athletes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Our Story Timeline -->
+    <section class="py-24 px-4 md:px-20 lg:px-40 bg-[#120b0c]">
+        <div class="max-w-[1100px] mx-auto">
+            <div class="flex flex-col items-center mb-16">
+                <span class="text-primary font-bold tracking-widest uppercase text-sm mb-2">The Journey</span>
+                <h2 class="text-white text-3xl md:text-4xl font-black text-center">Our Story</h2>
+            </div>
+            <!-- Timeline Item 1 -->
+            <div class="flex flex-col md:flex-row items-center gap-12 mb-24">
+                <div class="w-full md:w-1/2 aspect-video rounded-lg overflow-hidden border border-border-dark">
+                    <div class="w-full h-full bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-700"
+                        data-alt="Old warehouse gym setting"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAk2QflVJDEDX4LpRNYncIKZuWJhmkYmdNaEkwcz17zGrRut3LW_QrYnW6GJO2ThNkrOXyb8U2O2x2Zi--KUnEj6iKYwwaea8mmlanJAfUMV7qbXcnS2ywLO_gyh0WjdLS9p2qAiA23swaKTRkEpna58u3NZtR6YgIgty4-GR8vb-3fmGOO5po_UAutZGKGLCY_MIj3nsbfVbIEkMQT9cUwl_W3KlVqfvX6_zNhoHtogse8oufOMVMFqZuUJ4bwmt9_NkXNiSusP9UJ');">
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <div class="text-primary font-black text-4xl mb-4 italic opacity-50">2014</div>
+                    <h3 class="text-2xl font-bold text-white mb-4 uppercase">The Garage Era</h3>
+                    <p class="text-[#b89da0] leading-relaxed text-lg">
+                        We started in a single-car garage with two barbells and a dream. Our founder, Mark Steiner, wanted
+                        to create a space where hard work was the only currency. What started as a small group of friends
+                        quickly outgrew the driveway.
+                    </p>
+                </div>
+            </div>
+            <!-- Timeline Item 2 -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-12 mb-24">
+                <div class="w-full md:w-1/2 aspect-video rounded-lg overflow-hidden border border-border-dark">
+                    <div class="w-full h-full bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-700"
+                        data-alt="Large industrial gym space"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDyNiWhcrrM1Z8wBa1ursH7cYJcja_Ecl9j4JSnFeUundpS7Rznq6rmKREor1seiUqnrixJ-XGUoBrPl0-ATHWacNup0DKhKDY3hBvuZVoGXMICVD6iEW6gmOVVPJtrhCXbrdsHdU5BxNGCkPw-RoAndbyno68_QhywkX6P5YG4w8IU2Uayyd7ZJ1yxU0yDv-cCd8Yang01_8yI54cJPrC5JDF6UUlOgHqAx6da74antdaW1SrD2jWfDkdXajv_nnqDxot_vgKqItfL');">
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <div class="text-primary font-black text-4xl mb-4 italic opacity-50">2018</div>
+                    <h3 class="text-2xl font-bold text-white mb-4 uppercase">The Industrial Box</h3>
+                    <p class="text-[#b89da0] leading-relaxed text-lg text-right md:text-left">
+                        We moved into our first 5,000 sq ft industrial space. With custom rigs and a growing community, we
+                        became the premier destination for serious CrossFitters in the city. The community became our core
+                        identity.
+                    </p>
+                </div>
+            </div>
+            <!-- Timeline Item 3 -->
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2 aspect-video rounded-lg overflow-hidden border border-border-dark">
+                    <div class="w-full h-full bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-700"
+                        data-alt="Modern high tech gym interior"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBACk__QKkq7bwhtWBwpX7KFgJJ8PqAfeJFh3WeJEVR-EUGbILM-fQIL9g7VigR81GScizv6j5s_wWaAA_nwVFz3uSxMnQ9OY3FfGW7b7v4C21GuYhy8m51rkNQDuoFBg_yao9RMFKJrZZQLgOU86cjw7ZcUFOzqO3bs14lZTFbb0AY5gwyEiPLK1vDBN6N4yAwScFT_beMyibQlokJ4CwAUpcSE6OJPDB0Z1UFJJytWtsz1nlDFfV3lKfy1zdghqvhWroxfuFBNCNJ');">
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <div class="text-primary font-black text-4xl mb-4 italic opacity-50">Today</div>
+                    <h3 class="text-2xl font-bold text-white mb-4 uppercase">The Elite Standard</h3>
+                    <p class="text-[#b89da0] leading-relaxed text-lg">
+                        Now operating a state-of-the-art facility, we offer elite coaching, specialized programming, and an
+                        unmatched support system. We've helped thousands redefine their limits and change their lives.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Core Values Section -->
+    <section class="py-20 px-4 md:px-20 lg:px-40 bg-background-dark border-y border-border-dark">
+        <div class="max-w-[960px] mx-auto text-center">
+            <h2 class="text-white text-3xl font-black mb-12 uppercase italic tracking-tighter">Core Values</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-primary/10 border-l-4 border-primary p-6 text-left">
+                    <h4 class="text-primary font-black uppercase mb-2">Relentless</h4>
+                    <p class="text-white/80 text-sm">We don't stop when we're tired; we stop when we're done. Grit is our
+                        middle name.</p>
+                </div>
+                <div class="bg-primary/10 border-l-4 border-primary p-6 text-left">
+                    <h4 class="text-primary font-black uppercase mb-2">Community</h4>
+                    <p class="text-white/80 text-sm">No one finishes alone. We cheer for the last person just as loud as the
+                        first.</p>
+                </div>
+                <div class="bg-primary/10 border-l-4 border-primary p-6 text-left">
+                    <h4 class="text-primary font-black uppercase mb-2">Honesty</h4>
+                    <p class="text-white/80 text-sm">Respect the standards. No rep is a good rep. We value integrity over
+                        speed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Trainer Intro Section -->
+    <section class="py-24 px-4 md:px-20 lg:px-40 bg-[#181112]">
+        <div class="max-w-[960px] mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <span class="text-primary font-bold tracking-widest uppercase text-sm mb-2">The Experts</span>
+                    <h2 class="text-white text-4xl font-black uppercase italic">Meet the Coaches</h2>
+                </div>
+                <a class="text-primary border-b border-primary pb-1 font-bold hover:text-white transition-colors"
+                    href="trainers.html">View All Coaches</a>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Trainer 1 -->
+                <div class="group relative overflow-hidden rounded-lg">
+                    <div class="aspect-[3/4] overflow-hidden bg-neutral-dark">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Portrait of male fitness trainer"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2rgMCf0fL8h_1j_XBgpSo0pT-ux5E-ClyhK1fuYn7soLjWNdIHjnKdSzak8sLWc7ry2gbn-GbcONpfkmTTw2fI_MwPITPN4NzIRn1nPXhaY5UBe2lSjUY-rqtE9m3hcuZqRO7fulEGc7j4HQlgi2NSM4_eabdrE_enA1G_d9R2p4g0B8pWHef-9rGrAT3S1d4y0_S3MlDuRK1mdpFrJknXlOrX_57GrVbf7-aG7fyQyZaXA6b5GgsNINnF19Pk7yQyok1HwBaLlS5" />
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-90">
+                    </div>
+                    <div class="absolute bottom-0 p-4 w-full">
+                        <h4 class="text-white font-bold text-lg leading-none mb-1">Coach Marcus</h4>
+                        <p class="text-primary text-xs font-bold uppercase tracking-widest">Head Coach / L-3</p>
+                    </div>
+                </div>
+                <!-- Trainer 2 -->
+                <div class="group relative overflow-hidden rounded-lg">
+                    <div class="aspect-[3/4] overflow-hidden bg-neutral-dark">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Portrait of female fitness trainer"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0reK83ObfzlUKo6sO6ToEp-ofApgdpC9eMatmlzZVGjjbiHFRHWDlb4dVw7Zo2CuNp5B7gsO8KkvFzef5SKT26wcn7a0Eg6lPqPPQvH3MwgdAM7gJPqUACNJmnckGuUN22kYNcYUNceDB8mlDXZ8-UeHYyLf3jLpAKJENl8KlyrPnFzFY3krFGNg7QpSy3AtqMxVNw122pCa4RQEDDoshJ5GjY90wT4D6uq1M8QicxkvyLJahJoP9tvIbI0viTKcnBraLjacv8KZ-" />
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-90">
+                    </div>
+                    <div class="absolute bottom-0 p-4 w-full">
+                        <h4 class="text-white font-bold text-lg leading-none mb-1">Coach Elena</h4>
+                        <p class="text-primary text-xs font-bold uppercase tracking-widest">Olympic Lifting</p>
+                    </div>
+                </div>
+                <!-- Trainer 3 -->
+                <div class="group relative overflow-hidden rounded-lg">
+                    <div class="aspect-[3/4] overflow-hidden bg-neutral-dark">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Portrait of fit trainer in gym"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZb_6N506XIeg_X9DwnBrdHwE0F9TvbMH1ayn_GTKoMNkvShA8BHAvBCH1hN8iV9oehoOxhWj4eduPDtmgsNJrcf1KWnw4HuihvPayCQVL-dnyRNNJhD6aA_SxS7NQMQ7NTdh-QB2gn_p_wDVs8Imjm3UBn9FpkLt_T941M0DLwRDY5WpnIg-SXl5hW5ZbPi7r48kvVCIJthrd0w91UMmgLng9on4RItoGWCKI35pJWRhHnzOSAEfWPWEu26SPeUseJJDe3u9SJn4V" />
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-90">
+                    </div>
+                    <div class="absolute bottom-0 p-4 w-full">
+                        <h4 class="text-white font-bold text-lg leading-none mb-1">Coach Jax</h4>
+                        <p class="text-primary text-xs font-bold uppercase tracking-widest">Gymnastics Lead</p>
+                    </div>
+                </div>
+                <!-- Trainer 4 -->
+                <div class="group relative overflow-hidden rounded-lg">
+                    <div class="aspect-[3/4] overflow-hidden bg-neutral-dark">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Portrait of strength coach"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeZKsL06ErcUDYT-w914yGdbUQ44iZcP_CJJkovGecN1EJYcDiehsK7wM2rKWj6mS3Vi_04Ex7XXToaWy1OOn9BPBNxJFn9zyPc2b9VsfZAVQYK-Bo6F0ErsN5r2WFzcgwdLWdPNV8aG9Qh89TRpVgeuY0BczjUUdntKqugFxgGAAj_LNlY8fUtys_--cjel01T1bnjTEfMtQQKtXeWqB3Sta4rmBqxr0GN_PKHiD6NM8qkV12-pAZ7bYdkunBUs_iCLnaE41cwTpD" />
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-90">
+                    </div>
+                    <div class="absolute bottom-0 p-4 w-full">
+                        <h4 class="text-white font-bold text-lg leading-none mb-1">Coach Sarah</h4>
+                        <p class="text-primary text-xs font-bold uppercase tracking-widest">Mobility Specialist</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary text-white text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-black uppercase italic mb-6">Ready to write your story?</h2>
+            <p class="text-white/90 text-lg mb-8 max-w-xl mx-auto">First class is always on us. Come see what makes the
+                CrossFit Gym community different.</p>
+            <a href="contact.html"
+                class="bg-white text-primary px-10 py-4 rounded font-black uppercase tracking-widest hover:bg-neutral-100 transition-all hover:scale-105 active:scale-95 shadow-xl inline-block text-center">
+                Get Free Pass
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-background-dark border-t border-white/10 pt-20 pb-10 px-4 md:px-10 lg:px-40">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div class="flex flex-col gap-6">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="text-primary size-8 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-4xl">fitness_center</span>
+                </div>
+                <h2 class="text-xl font-black tracking-tighter uppercase">CrossFit<span class="text-primary">Gym</span>
+                </h2>
+            </a>
+            <p class="text-white/60 leading-relaxed">
+                Dedicated to forging elite fitness and building a community of strong, healthy individuals through
+                functional movement.
+            </p>
+            <div class="flex gap-4">
+                <a class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">public</span>
+                </a>
+                <a class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">video_library</span>
+                </a>
+                <a class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">camera</span>
+                </a>
+            </div>
+        </div>
+        <div>
+            <h4 class="text-lg font-black uppercase mb-8 border-b border-primary/20 pb-2">Quick Links</h4>
+            <ul class="flex flex-col gap-4 text-white/60 text-sm">
+                <li><a class="hover:text-primary transition-colors" href="about.html">About Us</a></li>
+                <li><a class="hover:text-primary transition-colors" href="classes.html">Our Classes</a>
+                </li>
+                <li><a class="hover:text-primary transition-colors" href="trainers.html">Expert
+                        Trainers</a></li>
+                <li><a class="hover:text-primary transition-colors" href="schedule.html">Workout
+                        Schedule</a></li>
+                <li><a class="hover:text-primary transition-colors" href="blog.html">Success
+                        Stories</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="text-lg font-black uppercase mb-8 border-b border-primary/20 pb-2">Support</h4>
+            <ul class="flex flex-col gap-4 text-white/60 text-sm">
+                <li><a class="hover:text-primary transition-colors" href="faq.html">FAQ</a></li>
+                <li><a class="hover:text-primary transition-colors" href="contact.html">Contact Us</a>
+                </li>
+                <li><a class="hover:text-primary transition-colors" href="privacy-policy.html">Privacy
+                        Policy</a></li>
+                <li><a class="hover:text-primary transition-colors" href="terms-of-service.html">Terms of
+                        Service</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="text-lg font-black uppercase mb-8 border-b border-primary/20 pb-2">Contact Info</h4>
+            <ul class="flex flex-col gap-4 text-white/60 text-sm">
+                <li class="flex gap-3">
+                    <span class="material-symbols-outlined text-primary text-xl">location_on</span>
+                    <span>123 Elite Fitness Ave, <br />Austin, TX 78701</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="material-symbols-outlined text-primary text-xl">call</span>
+                    <span>(555) 123-4567</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="material-symbols-outlined text-primary text-xl">mail</span>
+                    <span>train@crossfitgym.com</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="border-t border-white/5 pt-8 text-center text-white/40 text-xs">
+        <p>© 2024 CrossFit Gym. All rights reserved. Forged in the Box.</p>
+    </div>
+</footer>
+
+</body>
+
+</html>

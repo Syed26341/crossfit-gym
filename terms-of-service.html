@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CrossFit Gym | Unleash Your Strength</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#e63946",
+                    "background-light": "#f8f6f6",
+                    "background-dark": "#1a1a1a",
+                    "neutral-dark": "#261c1d",
+                    "border-dark": "#38292a",
+                },
+                fontFamily: {
+                    "display": ["Lexend", "sans-serif"],
+                    "sans": ["Lexend", "sans-serif"]
+                },
+                borderRadius: {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+                },
+            },
+        },
+    }
+</script>
+<style>
+    body {
+        font-family: 'Lexend', sans-serif;
+    }
+
+    .hero-gradient {
+        background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.6)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hover-lift {
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .hover-lift:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Classes Page Styles */
+    .class-card:hover {
+        transform: translateY(-8px);
+        transition: all 0.3s ease;
+    }
+
+    .btn-hover:hover {
+        transform: scale(1.05);
+        transition: transform 0.2s ease;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 0.6s ease forwards;
+    }
+
+    /* FAQ Page Styles */
+    details>summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .fade-in-section {
+        opacity: 1;
+        /* Fallback for no JS */
+        animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    /* Schedule Page Styles */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: #2d1a1b;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #e63746;
+    }
+
+    /* Trainers Page Styles */
+    .trainer-card:hover .social-icons {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .form-input:focus {
+        border-color: #e63746 !important;
+        box-shadow: none !important;
+    }
+
+    /* Blog Details Styles */
+    .article-content h2 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .article-content p {
+        font-size: 1.125rem;
+        line-height: 1.75;
+        margin-bottom: 1.5rem;
+        color: #d1c1c2;
+    }
+
+    .article-content blockquote {
+        border-left: 4px solid #e63746;
+        padding-left: 1.5rem;
+        font-style: italic;
+        margin: 2rem 0;
+        color: white;
+        font-size: 1.25rem;
+    }
+</style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-white font-display">
+
+    <header
+    class="sticky top-0 z-50 w-full bg-background-dark border-b border-white/10 px-4 md:px-10 lg:px-20 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2">
+        <div class="text-primary size-8 flex items-center justify-center">
+            <span class="material-symbols-outlined text-4xl">fitness_center</span>
+        </div>
+        <h1 class="text-xl font-black tracking-tighter uppercase">CrossFit<span class="text-primary">Gym</span></h1>
+    </a>
+    <nav class="hidden xl:flex items-center gap-6">
+        <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors" href="about.html">About</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="classes.html">Classes</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="trainers.html">Trainers</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="schedule.html">Schedule</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="blog.html">Blog</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors" href="faq.html">FAQ</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="contact.html">Contact</a>
+    </nav>
+    <div class="flex items-center gap-4">
+        <a href="contact.html"
+            class="bg-primary hover:bg-primary/90 text-white px-6 py-2 text-sm font-bold uppercase transition-all rounded">
+            Join Now
+        </a>
+        <button class="xl:hidden text-white">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+    </div>
+</header>
+
+        <!-- Hero Section -->
+    <section class="relative py-20 bg-background-dark border-b border-white/5">
+        <div class="max-w-[1000px] mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4">
+                Terms of <span class="text-primary">Service</span>
+            </h1>
+            <p class="text-white/60 text-lg max-w-2xl mx-auto">
+                These terms govern your use of our website and services.
+            </p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-20 px-6 max-w-[1000px] mx-auto">
+        <div class="prose prose-invert prose-lg max-w-none">
+            <p class="text-white/80 leading-relaxed mb-8">
+                Last updated: October 24, 2023
+            </p>
+
+            <h3 class="text-2xl font-bold text-white uppercase mb-4">1. Acceptance of Terms</h3>
+            <p class="text-white/60 mb-6">
+                By accessing and using our website and services, you accept and agree to be bound by the terms and provision
+                of this agreement. In addition, when using these particular services, you shall be subject to any posted
+                guidelines or rules applicable to such services.
+            </p>
+
+            <h3 class="text-2xl font-bold text-white uppercase mb-4">2. Description of Service</h3>
+            <p class="text-white/60 mb-6">
+                We provide users with access to a rich collection of resources, including various communications tools,
+                forums, shopping services, personalised content and branded programming through our network of properties
+                which may be accessed through any various medium or device.
+            </p>
+
+            <h3 class="text-2xl font-bold text-white uppercase mb-4">3. Registration Obligations</h3>
+            <p class="text-white/60 mb-6">
+                In consideration of your use of the Service, you represent that you are of legal age to form a binding
+                contract and are not a person barred from receiving services under the laws of the United States or other
+                applicable jurisdiction.
+            </p>
+
+            <h3 class="text-2xl font-bold text-white uppercase mb-4">4. Member Conduct</h3>
+            <p class="text-white/60 mb-6">
+                You understand that all information, data, text, software, music, sound, photographs, graphics, video,
+                messages or other materials ("Content"), whether publicly posted or privately transmitted, are the sole
+                responsibility of the person from which such Content originated.
+            </p>
+
+            <h3 class="text-2xl font-bold text-white uppercase mb-4">5. Modifications to Service</h3>
+            <p class="text-white/60 mb-6">
+                We reserve the right at any time and from time to time to modify or discontinue, temporarily or permanently,
+                the Service (or any part thereof) with or without notice. You agree that we shall not be liable to you or to
+                any third party for any modification, suspension or discontinuance of the Service.
+            </p>
+
+            <h3 class="text-2xl font-bold text-white uppercase mb-4">6. Contact Us</h3>
+            <p class="text-white/60 mb-6">
+                If you have any questions about these Terms, please contact us at <a href="mailto:support@crossfitgym.com"
+                    class="text-primary hover:underline">support@crossfitgym.com</a>.
+            </p>
+        </div>
+    </section>
+
+    <footer class="bg-background-dark border-t border-white/10 pt-20 pb-10 px-4 md:px-10 lg:px-40">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div class="flex flex-col gap-6">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="text-primary size-8 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-4xl">fitness_center</span>
+                </div>
+                <h2 class="text-xl font-black tracking-tighter uppercase">CrossFit<span class="text-primary">Gym</span>
+                </h2>
+            </a>
+            <p class="text-white/60 leading-relaxed">
+                Dedicated to forging elite fitness and building a community of strong, healthy individuals through
+                functional movement.
+            </p>
+            <div class="flex gap-4">
+                <a class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">public</span>
+                </a>
+                <a class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">video_library</span>
+                </a>
+                <a class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">camera</span>
+                </a>
+            </div>
+        </div>
+        <div>
+            <h4 class="text-lg font-black uppercase mb-8 border-b border-primary/20 pb-2">Quick Links</h4>
+            <ul class="flex flex-col gap-4 text-white/60 text-sm">
+                <li><a class="hover:text-primary transition-colors" href="about.html">About Us</a></li>
+                <li><a class="hover:text-primary transition-colors" href="classes.html">Our Classes</a>
+                </li>
+                <li><a class="hover:text-primary transition-colors" href="trainers.html">Expert
+                        Trainers</a></li>
+                <li><a class="hover:text-primary transition-colors" href="schedule.html">Workout
+                        Schedule</a></li>
+                <li><a class="hover:text-primary transition-colors" href="blog.html">Success
+                        Stories</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="text-lg font-black uppercase mb-8 border-b border-primary/20 pb-2">Support</h4>
+            <ul class="flex flex-col gap-4 text-white/60 text-sm">
+                <li><a class="hover:text-primary transition-colors" href="faq.html">FAQ</a></li>
+                <li><a class="hover:text-primary transition-colors" href="contact.html">Contact Us</a>
+                </li>
+                <li><a class="hover:text-primary transition-colors" href="privacy-policy.html">Privacy
+                        Policy</a></li>
+                <li><a class="hover:text-primary transition-colors" href="terms-of-service.html">Terms of
+                        Service</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="text-lg font-black uppercase mb-8 border-b border-primary/20 pb-2">Contact Info</h4>
+            <ul class="flex flex-col gap-4 text-white/60 text-sm">
+                <li class="flex gap-3">
+                    <span class="material-symbols-outlined text-primary text-xl">location_on</span>
+                    <span>123 Elite Fitness Ave, <br />Austin, TX 78701</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="material-symbols-outlined text-primary text-xl">call</span>
+                    <span>(555) 123-4567</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="material-symbols-outlined text-primary text-xl">mail</span>
+                    <span>train@crossfitgym.com</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="border-t border-white/5 pt-8 text-center text-white/40 text-xs">
+        <p>© 2024 CrossFit Gym. All rights reserved. Forged in the Box.</p>
+    </div>
+</footer>
+
+</body>
+
+</html>

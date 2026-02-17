@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CrossFit Gym | Unleash Your Strength</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#e63946",
+                    "background-light": "#f8f6f6",
+                    "background-dark": "#1a1a1a",
+                    "neutral-dark": "#261c1d",
+                    "border-dark": "#38292a",
+                },
+                fontFamily: {
+                    "display": ["Lexend", "sans-serif"],
+                    "sans": ["Lexend", "sans-serif"]
+                },
+                borderRadius: {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+                },
+            },
+        },
+    }
+</script>
+<style>
+    body {
+        font-family: 'Lexend', sans-serif;
+    }
+
+    .hero-gradient {
+        background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.6)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hover-lift {
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .hover-lift:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Classes Page Styles */
+    .class-card:hover {
+        transform: translateY(-8px);
+        transition: all 0.3s ease;
+    }
+
+    .btn-hover:hover {
+        transform: scale(1.05);
+        transition: transform 0.2s ease;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 0.6s ease forwards;
+    }
+
+    /* FAQ Page Styles */
+    details>summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .fade-in-section {
+        opacity: 1;
+        /* Fallback for no JS */
+        animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    /* Schedule Page Styles */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: #2d1a1b;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #e63746;
+    }
+
+    /* Trainers Page Styles */
+    .trainer-card:hover .social-icons {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .form-input:focus {
+        border-color: #e63746 !important;
+        box-shadow: none !important;
+    }
+
+    /* Blog Details Styles */
+    .article-content h2 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .article-content p {
+        font-size: 1.125rem;
+        line-height: 1.75;
+        margin-bottom: 1.5rem;
+        color: #d1c1c2;
+    }
+
+    .article-content blockquote {
+        border-left: 4px solid #e63746;
+        padding-left: 1.5rem;
+        font-style: italic;
+        margin: 2rem 0;
+        color: white;
+        font-size: 1.25rem;
+    }
+</style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-white font-display">
+
+    <header
+    class="sticky top-0 z-50 w-full bg-background-dark border-b border-white/10 px-4 md:px-10 lg:px-20 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2">
+        <div class="text-primary size-8 flex items-center justify-center">
+            <span class="material-symbols-outlined text-4xl">fitness_center</span>
+        </div>
+        <h1 class="text-xl font-black tracking-tighter uppercase">CrossFit<span class="text-primary">Gym</span></h1>
+    </a>
+    <nav class="hidden xl:flex items-center gap-6">
+        <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors" href="about.html">About</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="classes.html">Classes</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="trainers.html">Trainers</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="schedule.html">Schedule</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="blog.html">Blog</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors" href="faq.html">FAQ</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="contact.html">Contact</a>
+    </nav>
+    <div class="flex items-center gap-4">
+        <a href="contact.html"
+            class="bg-primary hover:bg-primary/90 text-white px-6 py-2 text-sm font-bold uppercase transition-all rounded">
+            Join Now
+        </a>
+        <button class="xl:hidden text-white">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+    </div>
+</header>
+
+        <!-- Hero Section -->
+    <section class="max-w-[1200px] mx-auto px-4 md:px-10 py-8 mt-20">
+        <div class="relative w-full aspect-[21/9] overflow-hidden rounded-xl group">
+            <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/40 to-transparent z-10">
+            </div>
+            <img alt="CrossFit athlete performing a snatch lift"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                data-alt="Athlete performing power snatch in gym"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIjbf-X_y4V7Z86hpiu2XnSS1DpzX4kyfPinpoC3WSV-syuoGhEgh_525XELazGjv7kxSfAUqWSAlRQu0tVPF3F53bo0AHzj5MVQ8ulgCrDsAOKe0CTpaPHaHRsVgMbBM1eRBDYtSaIOVI4I9IUi7bDE3T7TQA1XSr4rHBevBeueBJoyVmzNRl6NGqITiWEkXI0bHfvKDOquQz6fPP8bMCcW25KTGRv9QpoKWswgPK9FgGj-Vk-qTvKzNDUZFJLCppiXgaX05VKX3x" />
+            <div class="absolute bottom-0 left-0 p-6 md:p-12 z-20 max-w-3xl">
+                <div class="flex gap-2 mb-4">
+                    <span
+                        class="bg-primary px-3 py-1 text-xs font-bold uppercase tracking-widest text-white rounded">Technique</span>
+                    <span
+                        class="bg-white/10 backdrop-blur-md px-3 py-1 text-xs font-bold uppercase tracking-widest text-white rounded">8
+                        Min Read</span>
+                </div>
+                <h1 class="text-white text-3xl md:text-5xl lg:text-6xl font-black leading-tight mb-4">
+                    Mastering the Snatch: 5 Drills for Explosive Power
+                </h1>
+                <div class="flex items-center gap-4 text-white/60">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm">person</span>
+                        <span class="text-sm font-medium text-white">Coach Mike</span>
+                    </div>
+                    <div class="h-1 w-1 bg-white/60 rounded-full"></div>
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm">calendar_today</span>
+                        <span class="text-sm">Oct 24, 2023</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Reading Progress -->
+        <div class="mt-8 flex flex-col gap-3">
+            <div class="flex gap-6 justify-between items-center">
+                <p class="text-white text-sm font-bold uppercase tracking-wider">Reading Progress</p>
+                <p class="text-primary text-sm font-bold">35%</p>
+            </div>
+            <div class="rounded-full bg-border-dark h-1.5 overflow-hidden">
+                <div class="h-full bg-primary" style="width: 35%;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <article class="w-full max-w-[800px] mx-auto px-4 md:px-10 py-12">
+        <!-- Breadcrumbs -->
+        <div class="flex items-center gap-2 mb-10 text-white/40 text-sm uppercase font-bold tracking-widest">
+            <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+            <span class="material-symbols-outlined text-xs">chevron_right</span>
+            <a class="hover:text-primary transition-colors" href="blog.html">Blog</a>
+            <span class="material-symbols-outlined text-xs">chevron_right</span>
+            <span class="text-white">Technique</span>
+        </div>
+        <div class="article-content">
+            <p class="text-xl text-white font-light leading-relaxed mb-10 italic">
+                The snatch is often called the king of the Olympic lifts. It requires a unique blend of strength,
+                flexibility, coordination, and raw explosive power. For many CrossFitters, it’s the most technical hurdle
+                they face.
+            </p>
+            <h2>The Foundation of Explosive Hip Extension</h2>
+            <p>
+                Most athletes fail their snatch because they aren't patient enough with the second pull. The hip extension
+                is where the magic happens. Without full extension, you're relying on your arms to muscle the weight up,
+                which limits your PR potential and risks injury.
+            </p>
+            <div class="my-10 bg-surface-dark border border-border-dark p-1 rounded-lg">
+                <img alt="Demonstrating hip extension" class="w-full h-auto rounded-lg"
+                    data-alt="Athlete demonstrating explosive hip extension movement"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8UN8CLM2QfcvGipUyV_tVMv1CbQJkL6X4TKFKRqKbSZvbAGUXt8-sWnlctUiVzlEFho6BV1ahDxFyG6MvDP3b2i04Nq6JKhdN2KdHtiEm-Ye_o6PbhwyN2Wk37ffFdnLgych3D2G92Mciws5O3dEM6ydDLKWB3bqI-U1jV0U2eRZVaYUR4sA_VFSLXtx_Agc0mUrCfNFWr2IN6idaAzLrlL2wDKw_Tnc0_b9j95SFKRRFhNBCMhMzGmHVJMgu6oStobBW4ajoFuaq" />
+                <p class="text-xs text-white/60 p-3 text-center mb-0">Fig 1.1: Achieving full vertical extension before the
+                    drop.</p>
+            </div>
+            <h2>Drill 1: The Snatch Balance</h2>
+            <p>
+                This is the ultimate drill for confidence under the bar. Starting with the bar on your back, you drop
+                rapidly into a full overhead squat. It teaches you to move your body around the bar rather than moving the
+                bar around your body.
+            </p>
+            <blockquote>
+                "Speed is the bridge between strength and skill. In the snatch, if you aren't fast, you're heavy."
+            </blockquote>
+            <h2>Drill 2: Tall Snatches</h2>
+            <p>
+                Tall snatches remove the momentum from the first pull. Starting from a standing position with the bar at the
+                hip, you must use only the shrug and the drop to get under the weight. This is perfect for correcting
+                "looping" issues with the barbell.
+            </p>
+            <p>
+                Remember, consistency beats intensity when learning technique. Strip the weight back, focus on the movement
+                path, and only add kilos when the movement is reflexive.
+            </p>
+        </div>
+        <!-- Tags & Share -->
+        <div class="mt-16 pt-8 border-t border-border-dark flex flex-wrap justify-between items-center gap-6">
+            <div class="flex gap-2">
+                <span class="text-white/60 text-sm font-bold uppercase mr-2 self-center">Tags:</span>
+                <a class="px-3 py-1 bg-surface-dark hover:bg-border-dark border border-border-dark rounded text-xs text-white/70 hover:text-white transition-all"
+                    href="#">OLYMPIC LIFTING</a>
+                <a class="px-3 py-1 bg-surface-dark hover:bg-border-dark border border-border-dark rounded text-xs text-white/70 hover:text-white transition-all"
+                    href="#">STRENGTH</a>
+            </div>
+            <div class="flex gap-4">
+                <button
+                    class="size-10 flex items-center justify-center rounded bg-surface-dark hover:bg-primary transition-all group">
+                    <span class="material-symbols-outlined text-xl group-hover:text-white text-white/70">share</span>
+                </button>
+                <button
+                    class="size-10 flex items-center justify-center rounded bg-surface-dark hover:bg-primary transition-all group">
+                    <span class="material-symbols-outlined text-xl group-hover:text-white text-white/70">bookmark</span>
+                </button>
+            </div>
+        </div>
+    </article>
+
+    <!-- Related Posts Section -->
+    <section class="w-full bg-surface-dark py-20 px-4 md:px-10 lg:px-40 border-y border-border-dark">
+        <div class="max-w-[1200px] mx-auto">
+            <div class="flex justify-between items-end mb-10">
+                <div>
+                    <p class="text-primary font-bold uppercase tracking-[0.2em] mb-2 text-sm">More Knowledge</p>
+                    <h2 class="text-3xl font-black text-white">Related Articles</h2>
+                </div>
+                <a class="text-white hover:text-primary font-bold text-sm uppercase flex items-center gap-2 group"
+                    href="blog.html">
+                    View All Posts <span
+                        class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+                </a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Related Card 1 -->
+                <a href="blog-details.html"
+                    class="flex flex-col bg-background-dark border border-border-dark rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img alt="Stretching and recovery"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Athlete stretching for recovery"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoEB5icQOo2yJOzXaFwcQpp--Nezegvu9oTy_pVzpre_rmoc_XIWAUdMkoF-5oHa7risIiDj3ZEyKXKvUBhloU9qMTzN3M1xXw12xCgOWWKCspmp7bt19Nc1PGDn41UXWE1fMV6kqsgi-2BN4aJmwuD45bU_PQ-RKrLWXebSGZInNM5xoFRWzCPAx4rg94C2uvM-LTYn3Aap0YDSF-EuivlTGAKvBPd_Ot2ddVi8-4SDbtjQC4grdfFNcUHkPXrbpKmKEQWZUlIGyP" />
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="bg-primary px-2 py-1 text-[10px] font-black uppercase text-white rounded">Recovery</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3
+                            class="text-white text-xl font-bold leading-tight mb-3 group-hover:text-primary transition-colors">
+                            Top 10 Recovery Tips for Competitive Athletes</h3>
+                        <p class="text-white/60 text-sm line-clamp-2 mb-4">Don't let soreness hold you back. Learn how the
+                            pros recover faster between sessions.</p>
+                        <span class="text-white text-xs font-bold uppercase tracking-widest">Oct 20, 2023</span>
+                    </div>
+                </a>
+                <!-- Related Card 2 -->
+                <a href="blog-details.html"
+                    class="flex flex-col bg-background-dark border border-border-dark rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img alt="Healthy food"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Close up of a healthy salad bowl"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPN1hKhYIfwfDVdhxdZfxubNfX7-699fwGU7NNYkG1xigATuZMoXyBQtYwGsSDAwCAaxi6VLp4wXL0ZW7Tbbh2M3nGbq04fqGO70JjAe_gUU2cWLP0Q_GwN_yVNYHo6pNuZlDaCFTjcV5YetmIRXafKc6_DgAOpGbeG6IgCDI4_HCw3hki3J1DRW4pqM9JsJpU5OE2379S-JMc5Th8rDuIX7M_ho5MGeceg2WssM_-yRal9E25xoRgkqB3qEXWfBWSimLrAbJ5sIfz" />
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="bg-primary px-2 py-1 text-[10px] font-black uppercase text-white rounded">Nutrition</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3
+                            class="text-white text-xl font-bold leading-tight mb-3 group-hover:text-primary transition-colors">
+                            The WOD Nutrition Guide: Fueling Your Engine</h3>
+                        <p class="text-white/60 text-sm line-clamp-2 mb-4">Macro tracking and timing secrets for maximum
+                            performance in the box.</p>
+                        <span class="text-white text-xs font-bold uppercase tracking-widest">Oct 18, 2023</span>
+                    </div>
+                </a>
+                <!-- Related Card 3 -->
+                <a href="blog-details.html"
+                    class="flex flex-col bg-background-dark border border-border-dark rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all group">
+                    <div class="relative h-48 overflow-hidden">
+                        <img alt="Gym community"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Group of people fist bumping at gym"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTsCnOFoyhoOkmJsZ8sbLgQpYtdGoioBvRxop5asvqzKSk4uA_WII-GHcHVBgYC-Ljor-z9KUAQ1hH2FKO6sJycwTlH2cRD9ohbMQ5tJCfGn3JDDZj_0FYj88j9upmha7g10zhKNSgH6n1v5Pq0jf6odCFZQO3NXYKV5NVmtxFMFtqZxaEeARZRY9GDdIzG8HOzsbshKneoK9t4YxWcHN2n_q0Wjw_58R51rBvQ-kNBz1ECEx8y6ZEtHavsw_C5B1_kLB2ddJnYUuI" />
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="bg-primary px-2 py-1 text-[10px] font-black uppercase text-white rounded">Community</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3
+                            class="text-white text-xl font-bold leading-tight mb-3 group-hover:text-primary transition-colors">
+                            Community Spotlight: Sarah's 100lb Journey</h3>
+                        <p class="text-white/60 text-sm line-clamp-2 mb-4">Inspiring transformations from our local
+                            CrossFit family this month.</p>
+                        <span class="text-white text-xs font-bold uppercase tracking-widest">Oct 15, 2023</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="max-w-[1200px] mx-auto px-4 md:px-10 py-16">
+        <div class="relative rounded-2xl overflow-hidden p-10 md:p-20 flex flex-col items-center text-center">
+            <div class="absolute inset-0 bg-primary z-0"></div>
+            <!-- Industrial Pattern Overlay -->
+            <div class="absolute inset-0 opacity-10 pointer-events-none z-10"
+                style="background-image: radial-gradient(circle, #000 1px, transparent 1px); background-size: 20px 20px;">
+            </div>
+            <h2 class="relative z-20 text-3xl md:text-5xl font-black text-white mb-6 uppercase italic tracking-tight">Ready
+                to hit your PR?</h2>
+            <p class="relative z-20 text-white/90 text-lg md:text-xl mb-10 max-w-2xl font-medium">
+                Our world-class coaches are ready to help you perfect your form and break through your plateaus.
+            </p>
+            <div class="relative z-20 flex flex-wrap gap-4 justify-center">
+                <a href="contact.html"
+                    class="bg-white text-primary px-8 py-4 rounded font-black uppercase text-sm hover:bg-background-dark hover:text-white transition-all transform hover:-translate-y-1 shadow-xl">
+                    Join a Class Today
+                </a>
+                <a href="schedule.html"
+                    class="bg-background-dark/20 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded font-black uppercase text-sm hover:bg-white/10 transition-all">
+                    View Schedule
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-background-dark border-t border-white/10 pt-20 pb-10 px-4 md:px-10 lg:px-40">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div class="flex flex-col gap-6">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="text-primary size-8 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-4xl">fitness_center</span>
+                </div>
+                <h2 class="text-xl font-black tracking-tighter uppercase">CrossFit<span class="text-primary">Gym</span>
+                </h2>
+            </a>
+            <p class="text-white/60 leading-relaxed">
+                Dedicated to forging elite fitness and building a community of strong, healthy individuals through
+                functional movement.
+            </p>
+            <div class="flex gap-4">
+                <a class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">public</span>
+                </a>
+                <a class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">video_library</span>
+                </a>
+                <a class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">camera</span>
+                </a>
+            </div>
+        </div>
+        <div>
+            <h4 class="text-lg font-black uppercase mb-8 border-b border-primary/20 pb-2">Quick Links</h4>
+            <ul class="flex flex-col gap-4 text-white/60 text-sm">
+                <li><a class="hover:text-primary transition-colors" href="about.html">About Us</a></li>
+                <li><a class="hover:text-primary transition-colors" href="classes.html">Our Classes</a>
+                </li>
+                <li><a class="hover:text-primary transition-colors" href="trainers.html">Expert
+                        Trainers</a></li>
+                <li><a class="hover:text-primary transition-colors" href="schedule.html">Workout
+                        Schedule</a></li>
+                <li><a class="hover:text-primary transition-colors" href="blog.html">Success
+                        Stories</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="text-lg font-black uppercase mb-8 border-b border-primary/20 pb-2">Support</h4>
+            <ul class="flex flex-col gap-4 text-white/60 text-sm">
+                <li><a class="hover:text-primary transition-colors" href="faq.html">FAQ</a></li>
+                <li><a class="hover:text-primary transition-colors" href="contact.html">Contact Us</a>
+                </li>
+                <li><a class="hover:text-primary transition-colors" href="privacy-policy.html">Privacy
+                        Policy</a></li>
+                <li><a class="hover:text-primary transition-colors" href="terms-of-service.html">Terms of
+                        Service</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="text-lg font-black uppercase mb-8 border-b border-primary/20 pb-2">Contact Info</h4>
+            <ul class="flex flex-col gap-4 text-white/60 text-sm">
+                <li class="flex gap-3">
+                    <span class="material-symbols-outlined text-primary text-xl">location_on</span>
+                    <span>123 Elite Fitness Ave, <br />Austin, TX 78701</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="material-symbols-outlined text-primary text-xl">call</span>
+                    <span>(555) 123-4567</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="material-symbols-outlined text-primary text-xl">mail</span>
+                    <span>train@crossfitgym.com</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="border-t border-white/5 pt-8 text-center text-white/40 text-xs">
+        <p>© 2024 CrossFit Gym. All rights reserved. Forged in the Box.</p>
+    </div>
+</footer>
+
+</body>
+
+</html>

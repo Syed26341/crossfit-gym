@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CrossFit Gym | Unleash Your Strength</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#e63946",
+                    "background-light": "#f8f6f6",
+                    "background-dark": "#1a1a1a",
+                    "neutral-dark": "#261c1d",
+                    "border-dark": "#38292a",
+                },
+                fontFamily: {
+                    "display": ["Lexend", "sans-serif"],
+                    "sans": ["Lexend", "sans-serif"]
+                },
+                borderRadius: {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+                },
+            },
+        },
+    }
+</script>
+<style>
+    body {
+        font-family: 'Lexend', sans-serif;
+    }
+
+    .hero-gradient {
+        background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.6)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hover-lift {
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .hover-lift:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Classes Page Styles */
+    .class-card:hover {
+        transform: translateY(-8px);
+        transition: all 0.3s ease;
+    }
+
+    .btn-hover:hover {
+        transform: scale(1.05);
+        transition: transform 0.2s ease;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 0.6s ease forwards;
+    }
+
+    /* FAQ Page Styles */
+    details>summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .fade-in-section {
+        opacity: 1;
+        /* Fallback for no JS */
+        animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    /* Schedule Page Styles */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: #2d1a1b;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #e63746;
+    }
+
+    /* Trainers Page Styles */
+    .trainer-card:hover .social-icons {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .form-input:focus {
+        border-color: #e63746 !important;
+        box-shadow: none !important;
+    }
+
+    /* Blog Details Styles */
+    .article-content h2 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .article-content p {
+        font-size: 1.125rem;
+        line-height: 1.75;
+        margin-bottom: 1.5rem;
+        color: #d1c1c2;
+    }
+
+    .article-content blockquote {
+        border-left: 4px solid #e63746;
+        padding-left: 1.5rem;
+        font-style: italic;
+        margin: 2rem 0;
+        color: white;
+        font-size: 1.25rem;
+    }
+</style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-white font-display">
+
+    <header
+    class="sticky top-0 z-50 w-full bg-background-dark border-b border-white/10 px-4 md:px-10 lg:px-20 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2">
+        <div class="text-primary size-8 flex items-center justify-center">
+            <span class="material-symbols-outlined text-4xl">fitness_center</span>
+        </div>
+        <h1 class="text-xl font-black tracking-tighter uppercase">CrossFit<span class="text-primary">Gym</span></h1>
+    </a>
+    <nav class="hidden xl:flex items-center gap-6">
+        <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors" href="about.html">About</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="classes.html">Classes</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="trainers.html">Trainers</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="schedule.html">Schedule</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="blog.html">Blog</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors" href="faq.html">FAQ</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="contact.html">Contact</a>
+    </nav>
+    <div class="flex items-center gap-4">
+        <a href="contact.html"
+            class="bg-primary hover:bg-primary/90 text-white px-6 py-2 text-sm font-bold uppercase transition-all rounded">
+            Join Now
+        </a>
+        <button class="xl:hidden text-white">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+    </div>
+</header>
+
+        <!-- Hero Section -->
+    <section class="relative h-[300px] flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-transparent opacity-50"></div>
+        <div class="z-10">
+            <span class="text-primary font-bold tracking-widest uppercase text-xs mb-2 block">Train Like a Pro</span>
+            <h1 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-4">
+                Weekly <span class="text-primary">Schedule</span>
+            </h1>
+            <p class="text-white/60 max-w-xl mx-auto text-sm md:text-base">
+                From early morning strength blocks to evening mobility sessions. Find your time, push your limits, and join
+                the community.
+            </p>
+        </div>
+    </section>
+    <!-- Timetable Filter/Navigation Bar -->
+    <section
+        class="px-4 md:px-20 py-6 border-y border-white/5 bg-background-dark/50 backdrop-blur-md sticky top-[72px] z-40">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex gap-2">
+                <button class="px-4 py-2 bg-primary text-white text-xs font-bold rounded uppercase">All Classes</button>
+                <button
+                    class="px-4 py-2 bg-white/5 text-white/70 text-xs font-bold rounded uppercase hover:bg-white/10">Strength</button>
+                <button
+                    class="px-4 py-2 bg-white/5 text-white/70 text-xs font-bold rounded uppercase hover:bg-white/10">Metcon</button>
+                <button
+                    class="px-4 py-2 bg-white/5 text-white/70 text-xs font-bold rounded uppercase hover:bg-white/10">Open
+                    Gym</button>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="p-2 hover:bg-white/10 rounded-full transition-colors">
+                    <span class="material-symbols-outlined">chevron_left</span>
+                </button>
+                <span class="text-sm font-bold uppercase tracking-widest">Oct 23 - Oct 29</span>
+                <button class="p-2 hover:bg-white/10 rounded-full transition-colors">
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Timetable Grid -->
+    <section class="px-4 md:px-20 py-10 max-w-7xl mx-auto w-full">
+        <div class="overflow-x-auto custom-scrollbar">
+            <div class="min-w-[1000px] border border-white/10 rounded-xl overflow-hidden bg-white/5">
+                <!-- Grid Header -->
+                <div class="grid grid-cols-8 border-b border-white/10 bg-white/5">
+                    <div class="p-4 border-r border-white/10 text-xs font-bold text-white/40 uppercase text-center">Time
+                    </div>
+                    <div class="p-4 border-r border-white/10 text-center">
+                        <span class="block text-xs font-bold text-white/40 uppercase">Mon</span>
+                        <span class="text-lg font-black text-white">23</span>
+                    </div>
+                    <div class="p-4 border-r border-white/10 text-center">
+                        <span class="block text-xs font-bold text-white/40 uppercase">Tue</span>
+                        <span class="text-lg font-black text-white">24</span>
+                    </div>
+                    <div class="p-4 border-r border-white/10 text-center bg-primary/10">
+                        <span class="block text-xs font-bold text-primary uppercase">Wed</span>
+                        <span class="text-lg font-black text-primary">25</span>
+                    </div>
+                    <div class="p-4 border-r border-white/10 text-center">
+                        <span class="block text-xs font-bold text-white/40 uppercase">Thu</span>
+                        <span class="text-lg font-black text-white">26</span>
+                    </div>
+                    <div class="p-4 border-r border-white/10 text-center">
+                        <span class="block text-xs font-bold text-white/40 uppercase">Fri</span>
+                        <span class="text-lg font-black text-white">27</span>
+                    </div>
+                    <div class="p-4 border-r border-white/10 text-center">
+                        <span class="block text-xs font-bold text-white/40 uppercase">Sat</span>
+                        <span class="text-lg font-black text-white">28</span>
+                    </div>
+                    <div class="p-4 text-center">
+                        <span class="block text-xs font-bold text-white/40 uppercase">Sun</span>
+                        <span class="text-lg font-black text-white">29</span>
+                    </div>
+                </div>
+                <!-- Time Slots -->
+                <div class="relative">
+                    <!-- 06:00 Slot -->
+                    <div class="grid grid-cols-8 border-b border-white/5">
+                        <div
+                            class="p-4 border-r border-white/10 text-[10px] font-bold text-white/40 text-center self-center uppercase">
+                            06:00 AM</div>
+                        <div class="p-2 border-r border-white/5">
+                            <div
+                                class="bg-primary hover:bg-primary/80 p-3 rounded h-full transition-all cursor-pointer group">
+                                <p class="text-[10px] font-bold text-white/70 uppercase">WOD</p>
+                                <h4 class="text-xs font-black text-white leading-tight">Strength + Metcon</h4>
+                                <div class="mt-2 flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[12px]">person</span>
+                                    <span class="text-[10px]">Mike T.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-2 border-r border-white/5">
+                            <div class="bg-primary/20 p-3 rounded h-full border border-primary/30">
+                                <p class="text-[10px] font-bold text-primary uppercase">WOD</p>
+                                <h4 class="text-xs font-black text-white leading-tight">Olympic Lifting</h4>
+                                <p class="text-[10px] text-white/40 mt-2">Jason R.</p>
+                            </div>
+                        </div>
+                        <div class="p-2 border-r border-white/5 bg-primary/5">
+                            <div class="bg-primary p-3 rounded h-full">
+                                <p class="text-[10px] font-bold text-white/70 uppercase">WOD</p>
+                                <h4 class="text-xs font-black text-white leading-tight">Strength + Metcon</h4>
+                                <p class="text-[10px] text-white/40 mt-2">Mike T.</p>
+                            </div>
+                        </div>
+                        <div class="p-2 border-r border-white/5"></div>
+                        <div class="p-2 border-r border-white/5">
+                            <div class="bg-primary p-3 rounded h-full">
+                                <p class="text-[10px] font-bold text-white/70 uppercase">WOD</p>
+                                <h4 class="text-xs font-black text-white leading-tight">Endurance</h4>
+                                <p class="text-[10px] text-white/40 mt-2">Elena V.</p>
+                            </div>
+                        </div>
+                        <div class="p-2 border-r border-white/5"></div>
+                        <div class="p-2"></div>
+                    </div>
+                    <!-- 08:00 Slot -->
+                    <div class="grid grid-cols-8 border-b border-white/5">
+                        <div
+                            class="p-4 border-r border-white/10 text-[10px] font-bold text-white/40 text-center self-center uppercase">
+                            08:00 AM</div>
+                        <div class="p-2 border-r border-white/5">
+                            <div class="bg-white/5 border border-white/10 p-3 rounded h-full text-white/40">
+                                <p class="text-[10px] font-bold uppercase">Staff</p>
+                                <h4 class="text-xs font-black leading-tight uppercase">Open Gym</h4>
+                            </div>
+                        </div>
+                        <div class="p-2 border-r border-white/5">
+                            <div class="bg-white/5 border border-white/10 p-3 rounded h-full text-white/40">
+                                <p class="text-[10px] font-bold uppercase">Staff</p>
+                                <h4 class="text-xs font-black leading-tight uppercase">Open Gym</h4>
+                            </div>
+                        </div>
+                        <div class="p-2 border-r border-white/5 bg-primary/5">
+                            <div class="bg-white/5 border border-white/10 p-3 rounded h-full text-white/40">
+                                <p class="text-[10px] font-bold uppercase">Staff</p>
+                                <h4 class="text-xs font-black leading-tight uppercase">Open Gym</h4>
+                            </div>
+                        </div>
+                        <div class="p-2 border-r border-white/5">
+                            <div class="bg-white/5 border border-white/10 p-3 rounded h-full text-white/40">
+                                <p class="text-[10px] font-bold uppercase">Staff</p>
+                                <h4 class="text-xs font-black leading-tight uppercase">Open Gym</h4>
+                            </div>
+                        </div>
+                        <div class="p-2 border-r border-white/5">
+                            <div class="bg-white/5 border border-white/10 p-3 rounded h-full text-white/40">
+                                <p class="text-[10px] font-bold uppercase">Staff</p>
+                                <h4 class="text-xs font-black leading-tight uppercase">Open Gym</h4>
+                            </div>
+                        </div>
+                        <div class="p-2 border-r border-white/5">
+                            <div class="bg-primary p-3 rounded h-full">
+                                <p class="text-[10px] font-bold text-white/70 uppercase">WOD</p>
+                                <h4 class="text-xs font-black text-white leading-tight">Partner Chipper</h4>
+                                <p class="text-[10px] text-white/40 mt-2">Team</p>
+                            </div>
+                        </div>
+                        <div class="p-2"></div>
+                    </div>
+                    <!-- 12:00 PM Slot -->
+                    <div class="grid grid-cols-8 border-b border-white/5">
+                        <div
+                            class="p-4 border-r border-white/10 text-[10px] font-bold text-white/40 text-center self-center uppercase">
+                            12:00 PM</div>
+                        <div class="p-2 border-r border-white/5">
+                            <div class="bg-primary p-3 rounded h-full">
+                                <p class="text-[10px] font-bold text-white/70 uppercase">Specialty</p>
+                                <h4 class="text-xs font-black text-white leading-tight">Gymnastics Prep</h4>
+                                <p class="text-[10px] text-white/40 mt-2">Sarah M.</p>
+                            </div>
+                        </div>
+                        <div class="p-2 border-r border-white/5"></div>
+                        <div class="p-2 border-r border-white/5 bg-primary/5">
+                            <div class="bg-primary p-3 rounded h-full">
+                                <p class="text-[10px] font-bold text-white/70 uppercase">Specialty</p>
+                                <h4 class="text-xs font-black text-white leading-tight">Gymnastics Prep</h4>
+                                <p class="text-[10px] text-white/40 mt-2">Sarah M.</p>
+                            </div>
+                        </div>
+                        <div class="p-2 border-r border-white/5"></div>
+                        <div class="p-2 border-r border-white/5">
+                            <div class="bg-primary p-3 rounded h-full">
+                                <p class="text-[10px] font-bold text-white/70 uppercase">WOD</p>
+                                <h4 class="text-xs font-black text-white leading-tight">Hero WOD</h4>
+                                <p class="text-[10px] text-white/40 mt-2">Mike T.</p>
+                            </div>
+                        </div>
+                        <div class="p-2 border-r border-white/5"></div>
+                        <div class="p-2"></div>
+                    </div>
+                    <!-- 05:00 PM Slot -->
+                    <div class="grid grid-cols-8">
+                        <div
+                            class="p-4 border-r border-white/10 text-[10px] font-bold text-white/40 text-center self-center uppercase">
+                            05:00 PM</div>
+                        <div class="p-2 border-r border-white/5">
+                            <div class="bg-primary p-3 rounded h-full">
+                                <p class="text-[10px] font-bold text-white/70 uppercase">WOD</p>
+                                <h4 class="text-xs font-black text-white leading-tight">Strength + Metcon</h4>
+                                <p class="text-[10px] text-white/40 mt-2">Jason R.</p>
+                            </div>
+                        </div>
+                        <div class="p-2 border-r border-white/5">
+                            <div class="bg-primary p-3 rounded h-full">
+                                <p class="text-[10px] font-bold text-white/70 uppercase">WOD</p>
+                                <h4 class="text-xs font-black text-white leading-tight">Strength + Metcon</h4>
+                                <p class="text-[10px] text-white/40 mt-2">Elena V.</p>
+                            </div>
+                        </div>
+                        <div class="p-2 border-r border-white/5 bg-primary/5">
+                            <div class="bg-primary p-3 rounded h-full relative overflow-hidden">
+                                <div class="absolute top-0 right-0 bg-white/20 text-[8px] px-1 font-bold">FULL</div>
+                                <p class="text-[10px] font-bold text-white/70 uppercase">WOD</p>
+                                <h4 class="text-xs font-black text-white leading-tight">Strength + Metcon</h4>
+                                <p class="text-[10px] text-white/40 mt-2">Mike T.</p>
+                            </div>
+                        </div>
+                        <div class="p-2 border-r border-white/5">
+                            <div class="bg-primary p-3 rounded h-full">
+                                <p class="text-[10px] font-bold text-white/70 uppercase">WOD</p>
+                                <h4 class="text-xs font-black text-white leading-tight">Strength + Metcon</h4>
+                                <p class="text-[10px] text-white/40 mt-2">Jason R.</p>
+                            </div>
+                        </div>
+                        <div class="p-2 border-r border-white/5">
+                            <div class="bg-white/10 p-3 rounded h-full border border-white/20">
+                                <p class="text-[10px] font-bold text-white/70 uppercase">Recovery</p>
+                                <h4 class="text-xs font-black text-white leading-tight">Yoga &amp; Flow</h4>
+                                <p class="text-[10px] text-white/40 mt-2">Elena V.</p>
+                            </div>
+                        </div>
+                        <div class="p-2 border-r border-white/5"></div>
+                        <div class="p-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Legend -->
+        <div class="mt-8 flex flex-wrap gap-6 items-center justify-center border-t border-white/5 pt-6">
+            <div class="flex items-center gap-2">
+                <div class="size-3 bg-primary rounded-sm"></div>
+                <span class="text-xs text-white/60 uppercase font-bold tracking-wider">Coach-Led WOD</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="size-3 bg-white/5 border border-white/20 rounded-sm"></div>
+                <span class="text-xs text-white/60 uppercase font-bold tracking-wider">Open Gym</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="size-3 bg-white/10 border border-white/40 rounded-sm"></div>
+                <span class="text-xs text-white/60 uppercase font-bold tracking-wider">Recovery/Specialty</span>
+            </div>
+        </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="px-4 md:px-20 py-20 bg-primary/5 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 pointer-events-none"
+            style="background-image: radial-gradient(circle at 2px 2px, #e63746 1px, transparent 0); background-size: 24px 24px;">
+        </div>
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-black uppercase mb-6 leading-tight">Ready to hit your next <span
+                    class="text-primary">PR</span>?</h2>
+            <p class="text-lg text-white/70 mb-10 max-w-2xl mx-auto">
+                Limited spots available for peak hour classes. Book your spot now and guarantee your space on the floor.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="contact.html"
+                    class="w-full sm:w-auto flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-4 px-10 rounded-lg transition-all transform hover:-translate-y-1 shadow-lg shadow-primary/20">
+                    <span class="material-symbols-outlined">event_available</span>
+                    Book Your Spot
+                </a>
+                <a href="faq.html"
+                    class="w-full sm:w-auto flex items-center justify-center gap-2 bg-transparent border border-white/20 hover:bg-white/5 text-white font-bold py-4 px-10 rounded-lg transition-all">
+                    View Pricing
+                </a>
+            </div>
+            <p class="mt-6 text-white/40 text-xs italic">
+                * Cancellation policy: Classes must be cancelled at least 2 hours in advance.
+            </p>
+        </div>
+    </section>
+
+    <footer class="bg-background-dark border-t border-white/10 pt-20 pb-10 px-4 md:px-10 lg:px-40">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div class="flex flex-col gap-6">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="text-primary size-8 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-4xl">fitness_center</span>
+                </div>
+                <h2 class="text-xl font-black tracking-tighter uppercase">CrossFit<span class="text-primary">Gym</span>
+                </h2>
+            </a>
+            <p class="text-white/60 leading-relaxed">
+                Dedicated to forging elite fitness and building a community of strong, healthy individuals through
+                functional movement.
+            </p>
+            <div class="flex gap-4">
+                <a class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">public</span>
+                </a>
+                <a class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">video_library</span>
+                </a>
+                <a class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">camera</span>
+                </a>
+            </div>
+        </div>
+        <div>
+            <h4 class="text-lg font-black uppercase mb-8 border-b border-primary/20 pb-2">Quick Links</h4>
+            <ul class="flex flex-col gap-4 text-white/60 text-sm">
+                <li><a class="hover:text-primary transition-colors" href="about.html">About Us</a></li>
+                <li><a class="hover:text-primary transition-colors" href="classes.html">Our Classes</a>
+                </li>
+                <li><a class="hover:text-primary transition-colors" href="trainers.html">Expert
+                        Trainers</a></li>
+                <li><a class="hover:text-primary transition-colors" href="schedule.html">Workout
+                        Schedule</a></li>
+                <li><a class="hover:text-primary transition-colors" href="blog.html">Success
+                        Stories</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="text-lg font-black uppercase mb-8 border-b border-primary/20 pb-2">Support</h4>
+            <ul class="flex flex-col gap-4 text-white/60 text-sm">
+                <li><a class="hover:text-primary transition-colors" href="faq.html">FAQ</a></li>
+                <li><a class="hover:text-primary transition-colors" href="contact.html">Contact Us</a>
+                </li>
+                <li><a class="hover:text-primary transition-colors" href="privacy-policy.html">Privacy
+                        Policy</a></li>
+                <li><a class="hover:text-primary transition-colors" href="terms-of-service.html">Terms of
+                        Service</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="text-lg font-black uppercase mb-8 border-b border-primary/20 pb-2">Contact Info</h4>
+            <ul class="flex flex-col gap-4 text-white/60 text-sm">
+                <li class="flex gap-3">
+                    <span class="material-symbols-outlined text-primary text-xl">location_on</span>
+                    <span>123 Elite Fitness Ave, <br />Austin, TX 78701</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="material-symbols-outlined text-primary text-xl">call</span>
+                    <span>(555) 123-4567</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="material-symbols-outlined text-primary text-xl">mail</span>
+                    <span>train@crossfitgym.com</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="border-t border-white/5 pt-8 text-center text-white/40 text-xs">
+        <p>© 2024 CrossFit Gym. All rights reserved. Forged in the Box.</p>
+    </div>
+</footer>
+
+</body>
+
+</html>

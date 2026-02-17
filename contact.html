@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CrossFit Gym | Unleash Your Strength</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "primary": "#e63946",
+                    "background-light": "#f8f6f6",
+                    "background-dark": "#1a1a1a",
+                    "neutral-dark": "#261c1d",
+                    "border-dark": "#38292a",
+                },
+                fontFamily: {
+                    "display": ["Lexend", "sans-serif"],
+                    "sans": ["Lexend", "sans-serif"]
+                },
+                borderRadius: {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+                },
+            },
+        },
+    }
+</script>
+<style>
+    body {
+        font-family: 'Lexend', sans-serif;
+    }
+
+    .hero-gradient {
+        background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.6)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hover-lift {
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .hover-lift:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Classes Page Styles */
+    .class-card:hover {
+        transform: translateY(-8px);
+        transition: all 0.3s ease;
+    }
+
+    .btn-hover:hover {
+        transform: scale(1.05);
+        transition: transform 0.2s ease;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 0.6s ease forwards;
+    }
+
+    /* FAQ Page Styles */
+    details>summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .fade-in-section {
+        opacity: 1;
+        /* Fallback for no JS */
+        animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    /* Schedule Page Styles */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: #2d1a1b;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #e63746;
+    }
+
+    /* Trainers Page Styles */
+    .trainer-card:hover .social-icons {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .form-input:focus {
+        border-color: #e63746 !important;
+        box-shadow: none !important;
+    }
+
+    /* Blog Details Styles */
+    .article-content h2 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .article-content p {
+        font-size: 1.125rem;
+        line-height: 1.75;
+        margin-bottom: 1.5rem;
+        color: #d1c1c2;
+    }
+
+    .article-content blockquote {
+        border-left: 4px solid #e63746;
+        padding-left: 1.5rem;
+        font-style: italic;
+        margin: 2rem 0;
+        color: white;
+        font-size: 1.25rem;
+    }
+</style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-white font-display">
+
+    <header
+    class="sticky top-0 z-50 w-full bg-background-dark border-b border-white/10 px-4 md:px-10 lg:px-20 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2">
+        <div class="text-primary size-8 flex items-center justify-center">
+            <span class="material-symbols-outlined text-4xl">fitness_center</span>
+        </div>
+        <h1 class="text-xl font-black tracking-tighter uppercase">CrossFit<span class="text-primary">Gym</span></h1>
+    </a>
+    <nav class="hidden xl:flex items-center gap-6">
+        <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors" href="about.html">About</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="classes.html">Classes</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="trainers.html">Trainers</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="schedule.html">Schedule</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="blog.html">Blog</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors" href="faq.html">FAQ</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors"
+            href="contact.html">Contact</a>
+    </nav>
+    <div class="flex items-center gap-4">
+        <a href="contact.html"
+            class="bg-primary hover:bg-primary/90 text-white px-6 py-2 text-sm font-bold uppercase transition-all rounded">
+            Join Now
+        </a>
+        <button class="xl:hidden text-white">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+    </div>
+</header>
+
+        <!-- Hero Banner Section -->
+    <section class="relative h-[400px] md:h-[500px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" data-alt="Intense athlete lifting heavy weights in a gritty gym"
+            style='background-image: linear-gradient(rgba(24, 17, 18, 0.7), rgba(24, 17, 18, 0.9)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCBbvCUJAwxFpctIVW3kNR-dvWZMBgCaCXemuE81OwMGHjl_zEAJrpOLgjZPxfrvRVK3NMJFt-sL6Bb9ZTiAgkqxpKMN9GcG5Uw7qxDmQYz9geb6_h195tqW5YcCBBPDOGihu131Yvpyiyu1HxEFtQRFpTaqmUohGcSs6haTkbNdknyeKxLMBXWZFHaXpyaUMa4NNtM8IOhqclvSXdi6Pd3ZQeerkutEXX49W5zxSfGMDNSH0wDGSdOZaa5IW12D7ZAiNnpUCbYAl8C");'>
+        </div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <h1 class="text-white text-5xl md:text-7xl font-black leading-none tracking-tighter uppercase mb-6">
+                JOIN THE COMMUNITY
+            </h1>
+            <p class="text-gray-300 text-lg md:text-xl font-light max-w-2xl mx-auto mb-8">
+                Forge elite fitness. Surround yourself with champions. Start your journey today.
+            </p>
+            <div class="flex justify-center gap-4">
+                <div class="h-1 w-20 bg-primary"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Main Content: Contact Form & Info -->
+    <main class="max-w-[1200px] mx-auto py-20 px-6 md:px-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <!-- Contact Form Section -->
+            <div class="flex flex-col gap-8">
+                <div>
+                    <h2 class="text-white text-3xl font-black uppercase tracking-tighter mb-2">Registration</h2>
+                    <p class="text-gray-400">Complete the form below to book your first session or inquire about
+                        memberships.</p>
+                </div>
+                <form class="flex flex-col gap-6">
+                    <div class="flex flex-col gap-2">
+                        <label class="text-primary text-xs font-bold uppercase tracking-widest">Full Name</label>
+                        <input
+                            class="form-input w-full rounded border border-white/10 bg-white/5 p-4 text-white placeholder:text-gray-600 focus:bg-white/10"
+                            placeholder="John Doe" type="text" />
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex flex-col gap-2">
+                            <label class="text-primary text-xs font-bold uppercase tracking-widest">Email Address</label>
+                            <input
+                                class="form-input w-full rounded border border-white/10 bg-white/5 p-4 text-white placeholder:text-gray-600 focus:bg-white/10"
+                                placeholder="john@example.com" type="email" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-primary text-xs font-bold uppercase tracking-widest">Phone Number</label>
+                            <input
+                                class="form-input w-full rounded border border-white/10 bg-white/5 p-4 text-white placeholder:text-gray-600 focus:bg-white/10"
+                                placeholder="+1 (555) 000-0000" type="tel" />
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="text-primary text-xs font-bold uppercase tracking-widest">Interested Program</label>
+                        <select
+                            class="form-input w-full rounded border border-white/10 bg-white/5 p-4 text-white focus:bg-white/10">
+                            <option class="bg-background-dark">Daily WOD</option>
+                            <option class="bg-background-dark">On-Ramp (Beginner)</option>
+                            <option class="bg-background-dark">Competitor Track</option>
+                            <option class="bg-background-dark">Personal Training</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="text-primary text-xs font-bold uppercase tracking-widest">Message (Optional)</label>
+                        <textarea
+                            class="form-input w-full rounded border border-white/10 bg-white/5 p-4 text-white placeholder:text-gray-600 focus:bg-white/10"
+                            placeholder="Tell us about your fitness goals..." rows="4"></textarea>
+                    </div>
+                    <button
+                        class="bg-primary text-white text-base font-bold uppercase tracking-widest h-14 rounded hover:bg-primary/90 transition-all shadow-lg shadow-primary/20"
+                        type="submit">
+                        Send Application
+                    </button>
+                </form>
+            </div>
+            <!-- Address & Map Block -->
+            <div class="flex flex-col gap-10 lg:pl-10">
+                <div class="bg-white/5 p-8 rounded border border-white/10">
+                    <h2 class="text-white text-2xl font-black uppercase mb-6 tracking-tight">The Box</h2>
+                    <div class="flex flex-col gap-6">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-primary/20 p-2 rounded">
+                                <span class="material-symbols-outlined text-primary">location_on</span>
+                            </div>
+                            <div>
+                                <p class="text-white font-bold uppercase text-sm">Location</p>
+                                <p class="text-gray-400">123 Iron Alley, Industrial District<br />New York, NY 10001</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-primary/20 p-2 rounded">
+                                <span class="material-symbols-outlined text-primary">schedule</span>
+                            </div>
+                            <div>
+                                <p class="text-white font-bold uppercase text-sm">Opening Hours</p>
+                                <p class="text-gray-400">Mon-Fri: 05:00 - 21:00</p>
+                                <p class="text-gray-400">Sat: 08:00 - 14:00</p>
+                                <p class="text-gray-400">Sun: Closed</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-primary/20 p-2 rounded">
+                                <span class="material-symbols-outlined text-primary">mail</span>
+                            </div>
+                            <div>
+                                <p class="text-white font-bold uppercase text-sm">Contact</p>
+                                <p class="text-gray-400">train@crossfitgym.com</p>
+                                <p class="text-gray-400">+1 (212) 555-8899</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Map Placeholder -->
+                <div class="relative w-full h-[300px] bg-white/5 rounded border border-white/10 overflow-hidden group">
+                    <div
+                        class="absolute inset-0 grayscale contrast-125 brightness-50 opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                        <img class="w-full h-full object-cover" data-alt="Modern dark-themed map display of an urban area"
+                            data-location="New York City"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3HEW2mgCnnDvy6yARdNv0ida9tTRSbmPSE_IobpfV9YyyCzZGYTmsMe3OZQ6VxQMCkp2iQWqpeB_bQJar7fw6S4FRHgZg6fh8vIfa0_C3YgnOACDiy8cTBvQ6PWELtzF0HSYAdUJGJkYXJOLJBvmvPYjcaQ1MXY9bQefRVn0t-9txy-5yhhc_toAAD4JuZs5XYIYAeQ2xCXaYbHIYeL3bAQ1_LCTniDBx4kGpPSYAUW1SrnoIjPUwtdCvpktLYSh6N0BMzFWH1pKN" />
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <div class="bg-primary text-white p-3 rounded-full shadow-2xl shadow-primary">
+                            <span class="material-symbols-outlined">fitness_center</span>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute bottom-4 left-4 right-4 bg-background-dark/90 p-3 rounded backdrop-blur-sm border border-white/10 text-xs text-center uppercase tracking-widest font-bold">
+                        Industrial District Headquarters
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- CTA Section -->
+    <section class="bg-primary py-20">
+        <div class="max-w-[1200px] mx-auto px-6 text-center">
+            <h2 class="text-white text-4xl md:text-5xl font-black uppercase tracking-tighter mb-6 italic">
+                Ready to crush your goals?
+            </h2>
+            <p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
+                Not sure where to start? Book a complimentary 15-minute intro session with one of our head coaches to assess
+                your level.
+            </p>
+            <a href="contact.html"
+                class="bg-background-dark text-white text-lg font-black uppercase tracking-widest px-12 py-5 rounded hover:scale-105 transition-transform inline-block text-center">
+                Book Free Intro Session
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-background-dark border-t border-white/10 pt-20 pb-10 px-4 md:px-10 lg:px-40">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div class="flex flex-col gap-6">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="text-primary size-8 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-4xl">fitness_center</span>
+                </div>
+                <h2 class="text-xl font-black tracking-tighter uppercase">CrossFit<span class="text-primary">Gym</span>
+                </h2>
+            </a>
+            <p class="text-white/60 leading-relaxed">
+                Dedicated to forging elite fitness and building a community of strong, healthy individuals through
+                functional movement.
+            </p>
+            <div class="flex gap-4">
+                <a class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">public</span>
+                </a>
+                <a class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">video_library</span>
+                </a>
+                <a class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">camera</span>
+                </a>
+            </div>
+        </div>
+        <div>
+            <h4 class="text-lg font-black uppercase mb-8 border-b border-primary/20 pb-2">Quick Links</h4>
+            <ul class="flex flex-col gap-4 text-white/60 text-sm">
+                <li><a class="hover:text-primary transition-colors" href="about.html">About Us</a></li>
+                <li><a class="hover:text-primary transition-colors" href="classes.html">Our Classes</a>
+                </li>
+                <li><a class="hover:text-primary transition-colors" href="trainers.html">Expert
+                        Trainers</a></li>
+                <li><a class="hover:text-primary transition-colors" href="schedule.html">Workout
+                        Schedule</a></li>
+                <li><a class="hover:text-primary transition-colors" href="blog.html">Success
+                        Stories</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="text-lg font-black uppercase mb-8 border-b border-primary/20 pb-2">Support</h4>
+            <ul class="flex flex-col gap-4 text-white/60 text-sm">
+                <li><a class="hover:text-primary transition-colors" href="faq.html">FAQ</a></li>
+                <li><a class="hover:text-primary transition-colors" href="contact.html">Contact Us</a>
+                </li>
+                <li><a class="hover:text-primary transition-colors" href="privacy-policy.html">Privacy
+                        Policy</a></li>
+                <li><a class="hover:text-primary transition-colors" href="terms-of-service.html">Terms of
+                        Service</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="text-lg font-black uppercase mb-8 border-b border-primary/20 pb-2">Contact Info</h4>
+            <ul class="flex flex-col gap-4 text-white/60 text-sm">
+                <li class="flex gap-3">
+                    <span class="material-symbols-outlined text-primary text-xl">location_on</span>
+                    <span>123 Elite Fitness Ave, <br />Austin, TX 78701</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="material-symbols-outlined text-primary text-xl">call</span>
+                    <span>(555) 123-4567</span>
+                </li>
+                <li class="flex gap-3">
+                    <span class="material-symbols-outlined text-primary text-xl">mail</span>
+                    <span>train@crossfitgym.com</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="border-t border-white/5 pt-8 text-center text-white/40 text-xs">
+        <p>© 2024 CrossFit Gym. All rights reserved. Forged in the Box.</p>
+    </div>
+</footer>
+
+</body>
+
+</html>
